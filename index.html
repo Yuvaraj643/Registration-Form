@@ -1,5 +1,4 @@
-
-<!DOCTYPE html
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,16 +12,15 @@
     <body>
         <h1>Registration Form</h1>
 
-        <form name="registrationForm" onsubmit="return validateForm()">
+        <form name="registrationForm" action="/action_page.php" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"  required pattern="[a-zA-z]" 
-            oninvalid="this.setCustomValidity('Username should not contain numbers')">
+            <input type="text" id="name" name="name" minlength="5" maxlength="10" required >
         
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" required>
         
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" maxlength="15" minlength="8" required>
         
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required>
